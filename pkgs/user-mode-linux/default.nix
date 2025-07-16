@@ -9,7 +9,7 @@
 }:
 
 stdenv.mkDerivation rec {
-  pname = "jonlinux";
+  pname = "user-mode-linux";
   version = "6.15.6";
 
   src = fetchurl {
