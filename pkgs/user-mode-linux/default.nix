@@ -1,11 +1,12 @@
-{ stdenv
-, fetchurl
-, gcc_multi
-, glibc_multi
-, bison
-, flex
-, lib
-, bc
+{
+  stdenv,
+  fetchurl,
+  gcc_multi,
+  glibc_multi,
+  bison,
+  flex,
+  lib,
+  bc,
 }:
 
 stdenv.mkDerivation rec {
@@ -17,7 +18,13 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-K7WGyVQnfQcMj99tcnX6qTtIB9m/M1O0kdgUnMoCtPw=";
   };
 
-  nativeBuildInputs = [ bc bison flex gcc_multi glibc_multi ];
+  nativeBuildInputs = [
+    bc
+    bison
+    flex
+    gcc_multi
+    glibc_multi
+  ];
 
   unpackPhase = ''
     tar xf $src
@@ -31,21 +38,21 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-    mkdir -p $out/bin
-    cp linux $out/bin/
+        mkdir -p $out/bin
+        cp linux $out/bin/
 
-    cat > $out/bin/run-uml <<EOF
-#!/bin/sh
-exec "\$0_dir/linux" \\
-  root=/dev/root \\
-  rootfstype=hostfs \\
-  ro \\
-  init=/bin/sh \\
-  mem=128M \\
-  debug
-EOF
-    chmod +x $out/bin/run-uml
-    substituteInPlace $out/bin/run-uml --replace "\$0_dir" "\$(dirname \$0)"
+        cat > $out/bin/run-uml <<EOF
+    #!/bin/sh
+    exec "\$0_dir/linux" \\
+      root=/dev/root \\
+      rootfstype=hostfs \\
+      ro \\
+      init=/bin/sh \\
+      mem=128M \\
+      debug
+    EOF
+        chmod +x $out/bin/run-uml
+        substituteInPlace $out/bin/run-uml --replace "\$0_dir" "\$(dirname \$0)"
   '';
 
   meta = {
