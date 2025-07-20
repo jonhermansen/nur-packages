@@ -17,11 +17,11 @@
   overlays = import ./overlays; # nixpkgs overlays
 
   #eiffelstudio = pkgs.callPackage ./pkgs/eiffelstudio { };
-  fuse-zip = pkgs.callPackage ./pkgs/fuse-zip { };
-  hello-jon = pkgs.callPackage ./pkgs/hello-jon { };
-  moonring = pkgs.callPackage ./pkgs/moonring { };
-  user-mode-linux = pkgs.callPackage ./pkgs/user-mode-linux { };
-  vfio-isolate = pkgs.callPackage ./pkgs/vfio-isolate { };
-  wayback-x11 = pkgs.callPackage ./pkgs/wayback-x11 { };
-  xlibre = pkgs.callPackage ./pkgs/xlibre { };
+  #fuse-zip = pkgs.callPackage ./pkgs/fuse-zip { };
+  #hello-jon = pkgs.callPackage ./pkgs/hello-jon { };
+  #moonring = pkgs.callPackage ./pkgs/moonring { };
+  #user-mode-linux = pkgs.callPackage ./pkgs/user-mode-linux { };
+  #vfio-isolate = pkgs.callPackage ./pkgs/vfio-isolate { };
+  #wayback-x11 = pkgs.callPackage ./pkgs/wayback-x11 { };
+  #xlibre = pkgs.callPackage ./pkgs/xlibre { };
 }
