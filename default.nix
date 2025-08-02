@@ -18,7 +18,7 @@
 
   eiffelstudio = pkgs.callPackage ./pkgs/eiffelstudio { };
   flashrom-dasharo = pkgs.callPackage ./pkgs/flashrom-dasharo { };
-  fuse-zip = pkgs.callPackage ./pkgs/fuse-zip { };
+  #fuse-zip = pkgs.callPackage ./pkgs/fuse-zip { };
   hello-jon = pkgs.callPackage ./pkgs/hello-jon { };
   moonring = pkgs.callPackage ./pkgs/moonring { };
   #spotx = pkgs.callPackage ./pkgs/spotx { };
