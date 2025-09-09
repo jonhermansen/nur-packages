@@ -36,7 +36,7 @@ let
   davinci = (
     stdenv.mkDerivation rec {
       pname = "davinci-resolve${lib.optionalString studioVariant "-studio"}";
-      version = "20.1.1";
+      version = "20.0.1";
 
       nativeBuildInputs = [
         (appimage-run.override { buildFHSEnv = buildFHSEnvChroot; })
@@ -59,9 +59,9 @@ let
             outputHashAlgo = "sha256";
             outputHash =
               if studioVariant then
-                "sha256-VU/OUUgE/Oz9H8qtN/oVEidaLaiWDdmUzkviVCda7XU="
+                "sha256-20ZmxkniX4rbKqxxjqGJOCSeZt6i+HN72Vm8HtsONUg="
               else
-                "sha256-3vTXDVxYnuDdNJRYAWSnc+zt+52saeY/xXS3j2rGLrI=";
+                "sha256-ZbiQdsm0zoVe0Riw8K6ZBRKd+v73OdplS0Db7P1DE6E=";
 
             impureEnvVars = lib.fetchers.proxyImpureEnvVars;
 
@@ -152,7 +152,7 @@ let
           test -e ${lib.escapeShellArg appimageName}
           appimage-run ${lib.escapeShellArg appimageName} -i -y -n -C $out
 
-          mkdir -p $out/{"Apple Immersive/Calibration",configs,DolbyVision,easyDCP,Fairlight,GPUCache,logs,Media,"Resolve Disk Database",.crashreport,.license,.LUT}
+          mkdir -p $out/{configs,DolbyVision,easyDCP,Fairlight,GPUCache,logs,Media,"Resolve Disk Database",.crashreport,.license,.LUT}
           runHook postInstall
         '';
 
